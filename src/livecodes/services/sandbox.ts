@@ -1,5 +1,5 @@
 export const sandboxService = {
-  getResultUrl: () => `codekit://codekit/livecodes-sandbox/v6/result.html`,
-  getCompilerUrl: () => `codekit://codekit/livecodes-sandbox/v6/compiler.html`,
-  getOrigin: () => `codekit://codekit`,
+  getResultUrl: () => `code://code/codekit/livecodes-sandbox/v6/result.html`,
+  getCompilerUrl: () => `code://code/codekit/livecodes-sandbox/v6/compiler.html`,
+  getOrigin: () => `code://code`,
 };
