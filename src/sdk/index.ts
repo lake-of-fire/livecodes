@@ -150,7 +150,9 @@ export async function createPlayground(
       frame.setAttribute('allowfullscreen', 'true');
       frame.setAttribute(
         'sandbox',
-        'allow-same-origin allow-downloads allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-presentation allow-scripts',
+        //'allow-same-origin allow-downloads allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-presentation allow-scripts',
+        // WKWebView compat:
+        'allow-same-origin allow-forms allow-modals allow-pointer-lock allow-popups allow-scripts',
       );
       const iframeLoading = loading === 'eager' ? 'eager' : 'lazy';
       frame.setAttribute('loading', iframeLoading);

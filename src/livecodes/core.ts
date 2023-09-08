@@ -234,7 +234,9 @@ const createIframe = (container: HTMLElement, result = '', service = sandboxServ
         iframe.setAttribute('allowfullscreen', 'true');
         iframe.setAttribute(
           'sandbox',
-          'allow-same-origin allow-downloads allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-presentation allow-scripts',
+          //'allow-same-origin allow-downloads allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-presentation allow-scripts',
+          // WKWebView compat:
+          'allow-same-origin allow-forms allow-modals allow-pointer-lock allow-popups allow-scripts',
         );
       }
     }
