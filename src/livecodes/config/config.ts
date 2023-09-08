@@ -46,7 +46,7 @@ export const getUserConfig = (config: Config | UserConfig): UserConfig => ({
 });
 
 export const getEditorConfig = (config: Config | UserConfig): EditorConfig => ({
-  editor: config.editor ?? ((config as Config).readonly === true ? 'codejar' : undefined),
+  editor: config.editor ?? undefined, //((config as Config).readonly === true ? 'codejar' : undefined),
   fontFamily: config.fontFamily,
   fontSize: config.fontSize,
   useTabs: config.useTabs,

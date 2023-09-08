@@ -57,35 +57,6 @@ const applyHash = async (
   /** @type {Record<string, string>} */
   const hashMap = {};
 
-  const patch = async (/** @type {string} */ fileName) => {
-    if (hashMap[fileName]) return;
-    hashMap[fileName] = 'waiting';
-    const data = await fs.promises.readFile(buildDir + fileName, 'utf8').catch((e) => {
-      if (devMode) return '';
-      throw e;
-    });
-    const matches = data.matchAll(new RegExp(hashPattern));
-    for (const match of matches) {
-      const matchName = match[1];
-      if (!matchName || hashMap[matchName]) continue;
-      await patch(matchName);
-    }
-    const result = data.replace(new RegExp(hashPattern), (_match, name) => hashMap[name]);
-
-    if (devMode) {
-      hashMap[fileName] = fileName;
-      await fs.promises.writeFile(buildDir + fileName, result, 'utf8');
-      return;
-    }
-
-    const hash = md5(result);
-    const hashedName = addHash(fileName, hash);
-    hashMap[fileName] = hashedName;
-    await fs.promises.writeFile(buildDir + hashedName, result, 'utf8');
-  };
-
-  await patch(entryPoint);
-
   for (const file of Object.keys(hashMap)) {
     if (hashMap[file] !== file) {
       await fs.promises.unlink(buildDir + file).catch((e) => {

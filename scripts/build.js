@@ -212,7 +212,7 @@ const esmBuild = () =>
       'templates/starter/index.ts',
       'editor/monaco/monaco.ts',
       'editor/codemirror/codemirror.ts',
-      'editor/codejar/codejar.ts',
+      //'editor/codejar/codejar.ts',
       'editor/blockly/blockly.ts',
       'editor/quill/quill.ts',
       'services/firebase.ts',
