@@ -1,8 +1,5 @@
-const serviceBaseUrl = 'codekit:///livecodes/sandbox';
-const version = 'v7';
-
 export const sandboxService = {
-  getResultUrl: () => `${serviceBaseUrl}/${version}/`,
-  getCompilerUrl: () => `${serviceBaseUrl}/${version}/compiler`,
-  getOrigin: () => new URL(serviceBaseUrl).origin,
+  getResultUrl: () => `codekit://codekit/livecodes-sandbox/v6/result.html`,
+  getCompilerUrl: () => `codekit://codekit/livecodes-sandbox/v6/compiler.html`,
+  getOrigin: () => `codekit://codekit`,
 };
