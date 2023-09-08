@@ -1,3 +1,0 @@
-# Solid (TS)
-
-TODO...
