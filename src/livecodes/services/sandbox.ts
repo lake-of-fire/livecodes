@@ -1,7 +1,4 @@
-const cfPagesBaseUrl = 'https://livecodes-sandbox.pages.dev';
-const ghPagesBaseUrl = 'https://live-codes.github.io/livecodes-sandbox/dist';
-
-const serviceBaseUrl = process.env.CI ? ghPagesBaseUrl : cfPagesBaseUrl;
+const serviceBaseUrl = 'codekit:///livecodes/sandbox';
 const version = 'v7';
 
 export const sandboxService = {
