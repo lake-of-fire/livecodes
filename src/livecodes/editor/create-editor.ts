@@ -6,8 +6,8 @@ import { fonts } from './fonts';
 const getEditorFileName = (editorName: Exclude<Config['editor'], ''>) =>
   editorName === 'codemirror'
     ? `{{hash:codemirror.js}}`
-    : editorName === 'codejar'
-    ? '{{hash:codejar.js}}'
+    /*: editorName === 'codejar'
+    ? '{{hash:codejar.js}}'*/
     : '{{hash:monaco.js}}';
 
 const loadEditor = async (editorName: Exclude<Config['editor'], ''>, options: EditorOptions) => {
